@@ -16,10 +16,6 @@ This repository contains my solutions to various problems from [Codeforces](http
 
 Contributions are welcome! If you have a more optimized solution, found a bug, or want to add solutions to new problems, feel free to create a pull request.
 
-## License
-
-This project is licensed under the [License Name] - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 Thanks to Codeforces for providing a platform for programming practice and problem-solving.
