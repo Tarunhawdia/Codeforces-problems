@@ -64,63 +64,29 @@ template <class T, class V> void _print(map<T, V> v) {
 
 void solve() {
     int n;
-    cin >> n;
-
-    set<int> availableNumbers;
-    for (int i = 1; i < n; i++) {
-        availableNumbers.insert(i);
+    cin>>n;
+    vll a(n);
+    for(int i=0;i<n;i++){
+        cin>>a[i];
     }
-
-    vector<int> result(n + 1, 0);
-
-    int largestPowerOf2 = 1;
-    while (largestPowerOf2 * 2 <= n) {
-        largestPowerOf2 *= 2;
-    }
-
-    if (n & 1) {
-        cout << n << endl;
-
-        int lowestBit = n & (-n);
-        result[n - 3] = lowestBit;
-        result[n - 2] = lowestBit + (lowestBit == 1 ? 2 : 1);
-        result[n - 1] = n - lowestBit;
-        result[n] = n;
-
-    } else { 
-        cout << largestPowerOf2 * 2 - 1 << endl;
-
-        if (n == largestPowerOf2) {
-            result[n - 4] = 1;
-            result[n - 3] = 3;
-            result[n - 2] = n - 2;
-            result[n - 1] = n - 1;
-            result[n] = n;
-        } else {
-            result[n - 2] = n;
-            result[n - 1] = n - 1;
-            result[n] = largestPowerOf2 - 1;
+    bool f=true;
+    for(int i=1;i<n;i++){
+        int val=abs(a[i]-a[i-1]);
+        if(val==7 || val==5){
+            continue;
+        }
+        else{
+            f=false;
+            break;
         }
     }
-
-    for (int i = 1; i <= n; i++) {
-        availableNumbers.erase(result[i]);
+    if(f==false){
+        cout<<"NO"<<nline;
+        return;
     }
+    cout<<"YES"<<nline;
 
-    // Fill in the unassigned positions in result vector
-    for (int i = 1; i <= n; i++) {
-        if (result[i] == 0) {
-            result[i] = *availableNumbers.begin();
-            availableNumbers.erase(result[i]);
-        }
-    }
-
-    for (int i = 1; i <= n; i++) {
-        cout << result[i] << " ";
-    }
-    cout << nline;
 }
-
 
 int main() {
 
