@@ -147,33 +147,24 @@ void _print(map<T, V> v)
 
 void solve()
 {
-    int n;
+
+    ll n;
     cin >> n;
 
-    int k;
-    cin >> k;
+    vector<ll> a(n);
 
-    string s;
-    cin >> s;
-
-    vector<int> a(2);
-
-    for (char c : s)
+    int last = -1, ans = 0;
+    for (int i = 0; i < n; ++i)
     {
-        a[c - '0']++;
+        int a;
+        cin >> a;
+        if (a - last > 1)
+        {
+            ans++;
+            last = a;
+        }
     }
-
-    int mn = max(a[0], a[1]) - n / 2;
-    int mx = a[0] / 2 + a[1] / 2;
-
-    if (k >= mn && (k - mn) % 2 == 0 && k <= mx)
-    {
-        cout << "YES" << nline;
-    }
-    else
-    {
-        cout << "NO" << nline;
-    }
+    cout << ans << nline;
 }
 
 int main()
