@@ -1,6 +1,6 @@
 // Problem: D - Yet-Another-Array-Problem
 // Contest: 2167
-// Language: C++20 (GCC 13-64)
+// Language: C++17 (GCC 7-32)
 // Tags: brute force, implementation, math, number theory, *1000
 
 #include <iostream>
