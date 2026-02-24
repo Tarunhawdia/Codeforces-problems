@@ -21,4 +21,4 @@ Contributions are welcome! If you have a more optimized solution, found a bug, o
 Thanks to Codeforces for providing a platform for programming practice and problem-solving.
 
 
-Total Solved: 22
+Total Solved: 23
