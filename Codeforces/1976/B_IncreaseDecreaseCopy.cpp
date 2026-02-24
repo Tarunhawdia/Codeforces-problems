@@ -81,22 +81,16 @@ void solve() {
     }
 
     ll curr = 0, mini = INT_MAX; // Initialize mini to INT_MAX
-    bool f = false;
+    bool flag = false;
 
     for (ll i = 0; i < n; i++) {
         curr += abs(a[i] - b[i]);
-        if (b[n] >= a[i] && b[n] <= b[i] || b[n] >= b[i] && b[n] <= a[i]) {
-            f = true;
-        }
+        if (b[n] >= a[i] && b[n] <= b[i] || b[n] >= b[i] && b[n] <= a[i]) flag = true;
         mini = min(min(abs(b[n] - a[i]), abs(b[i] - b[n])), mini);
     }
 
-    if (f == true) {
-        cout << curr + 1 << nline;
-    }
-    else {
-        cout << curr + mini + 1 << nline;
-    }
+    if (flag == true) cout << curr + 1 << endl;
+    else cout << curr + mini + 1 << endl;
 }
 
 int main() {
